@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    username: root
+    password: pass
+    url: jdbc:mysql://112.74.42.31:3307/cache
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#   调用类路径下的department.sql建库
+    schema:
+      - classpath:schema/department.sql
+      - classpath:schema/employee.sql
+    data:
+      - classpath:data/*.sql
+#   初始化
+    initialization-mode: never
+
+  redis:
+    host: 112.74.42.31
+    port: 6380
